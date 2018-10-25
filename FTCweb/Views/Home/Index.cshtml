@@ -4,43 +4,22 @@
 <div class="hero-background">
     <div class="hero-text">
         <h2>FluffyToyCoy</h2>
-        
-        
+        <div class="splash-screen-menu">
+            <div class="animate">
+                <ul>
+                    <li><a class="disabled-link" href="~/Home/About">Home Planet</a></li>
+                    <li><a class="disabled-link" href="~/Home/About">The Mission </a></li>
+                    <li><a class="disabled-link" href="~/Home/About">Contact </a></li>
+                </ul>
+            </div>
+        </div>
+
     </div>
-    <div class="splash-screen-menu">
-        <ul>
-            <li>Home Base</li>
-            <li>The Mission</li>
-            <li>Contact</li>
-        </ul>
-    </div>
+
 </div>
 <style>
 
-    ul {
-        text-wrap: none;
-    }
-    .splash-screen-menu {
-        position: fixed;
-        
-        text-align: center;
-        left: 20%;
-        position: fixed;
-        top: 50%;
-        color: white;
-    }
 
-    li {
-        border-radius: 2vw;
-        display: inline;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        padding-bottom: 2vw;
-        border: 2px solid white;
-        margin-right: 2vw;
-        font-size: 2vw;
-        
-    }
 </style>
 
 @*<div class="row">
@@ -72,11 +51,10 @@
             $("html").addClass("splash-screen");
             $("#body-render").removeClass("container body-content").addClass("splash-screen");
             $("footer").hide();
-            $(".hero-text").velocity(
-                {
-                    transform: ["scale(1)", "scale(0)"],
-                    opacity: 1,
-                }, { duration: 3500 }, [0, 0]);
+
+            setTimeout(function () {
+                $("a").removeClass("disabled-link").addClass("splash-links");
+            }, 4000);
           
         });
 

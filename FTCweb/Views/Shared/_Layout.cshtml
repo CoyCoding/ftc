@@ -9,13 +9,17 @@
 
 </head>
 <body>
-    @Html.Partial("_NavbarPartial")
+    @if (ViewBag.Title != "Splash Screen")
+     {
+        @Html.Partial("_NavbarPartial")
+     }
+
 
     <div id="body-render" class="container body-content">
         @RenderBody()
-
+        
         <footer>
-            <hr/>
+            <hr />
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
