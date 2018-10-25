@@ -2,7 +2,7 @@
     ViewBag.Title = "Splash Screen";
 }
 <div class="hero-background">
-    <div class="hero-text">     
+    <div class="hero-text">
         <h2>FluffyToyCoy</h2>
     </div>
 </div>
@@ -31,13 +31,19 @@
 </div>*@
 
 @section  scripts{
-    <script>
+<script>
         $(document).ready(function () {
             $("body").addClass("splash-screen");
             $("html").addClass("splash-screen");
             $("#body-render").removeClass("container body-content").addClass("splash-screen");
             $("footer").hide();
+            $(".hero-text").velocity(
+                {
+                    transform: ["scale(1)", "scale(0)"],
+                    opacity: 1,
+                }, { duration: 3500 }, [0, 0]);
+          
         });
 
-    </script>
+</script>
 }
