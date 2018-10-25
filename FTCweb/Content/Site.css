@@ -1,6 +1,5 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +20,19 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.splash-screen{
+    height: 100%;
+    margin: 0;
+}
+
+.hero-background {
+    background-image: url(img/hero-background.gif);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
