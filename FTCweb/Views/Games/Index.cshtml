@@ -19,63 +19,76 @@
             <th>@Model[0].MyProperty7</th>
         </tr>
     </thead>
-    @for (int rows = 1; rows < Model.Count; rows++)
-    {
-        <tbody>
-            @*<tr>
+    <tbody>
+        <tr>
+            <td>@Model[1].MyProperty1</td>
+            <th>@Model[1].MyProperty2</th>
+            <th>@Model[1].MyProperty3</th>
+            <th>@Model[1].MyProperty4</th>
+            <th>@Model[1].MyProperty6</th>
+            <th>@Model[1].MyProperty7</th>
+        </tr>
+    </tbody>
+    @*@for (int rows = 1; rows < Model.Count; rows++)
+        {
+            <tbody>
+                <tr>
                     <td>@Model[rows].MyProperty1</td>
                     <th>@Model[rows].MyProperty2</th>
                     <th>@Model[rows].MyProperty3</th>
                     <th>@Model[rows].MyProperty4</th>
                     <th>@Model[rows].MyProperty6</th>
                     <th>@Model[rows].MyProperty7</th>
-                </tr>*@
-        </tbody>
+                </tr>
+            </tbody>
 
-    }
+        }*@
 </table>
 
 @section scripts{
+<script>
+    $(document).ready(function () {
 
-    <script>
-        $(document).ready(function () {
-            var table = $("#game-table").DataTable({
-                ajax: {
-                    url: "/api/games",
-                    dataSrc: ""
-                },
-                columns: [
-                    {
-                        data: "MyProperty1"
-                        //render: function (data, type, customer) {
-                        //    return "<a href='/customers/edit/" + customer.id + "'>" + data + "</a>";
-                        //}
-                    },
-                    {
-                        data: "MyProperty2"
-                    },
-                    {
-                        data: "MyProperty3"
-                    },
-                    {
-                        data: "MyProperty4"
-                    },
-                    {
-                        data: "MyProperty6"
-                    },
-                    {
-                        data: "myProperty7"
-                        //render: function (data, type, customer) {
-                        //    return "<div class='text-center'>" +
-                        //        "<button data-customer-name='" + customer.name +
-                        //        "'data-customer-id='" + data +
-                        //        "'class='btn btn-link jq-delete' type='button' >Delete</button>" + "</div>"
-                        //}
-                    }
-                ]
-            });
-    </script>
+        //var table = $("#game-table").DataTable();
+        $("#game-table").dataTable({
+            paging: true,
+            searching: true,
+            ordering: true
+        });
+        //    ajax: {
+        //        url: "/api/games",
+        //        dataSrc: ""
+        //    },
+        //    columns: [
+        //        {
+        //            data: "MyProperty1"
+        //            //render: function (data, type, customer) {
+        //            //    return "<a href='/customers/edit/" + customer.id + "'>" + data + "</a>";
+        //            //}
+        //        },
+        //        {
+        //            data: "MyProperty2"
+        //        },
+        //        {
+        //            data: "MyProperty3"
+        //        },
+        //        {
+        //            data: "MyProperty4"
+        //        },
+        //        {
+        //            data: "MyProperty6"
+        //        },
+        //        {
+        //            data: "myProperty7"
+        //            //render: function (data, type, customer) {
+        //            //    return "<div class='text-center'>" +
+        //            //        "<button data-customer-name='" + customer.name +
+        //            //        "'data-customer-id='" + data +
+        //            //        "'class='btn btn-link jq-delete' type='button' >Delete</button>" + "</div>"
+        //            //}
+        //        }
+        //    ]
+        //});
+</script>
 }
 
-<button id="signin-button" onclick="handleSignInClick()">Sign in</button>
-<button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
