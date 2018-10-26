@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FTCweb.Models;
 
 namespace FTCweb.Controllers
 {
@@ -15,9 +16,14 @@ namespace FTCweb.Controllers
 
         public ActionResult About()
         {
+            var csv = new WebConnection();
+
+            //csv.GetString();
+            var games = csv.GameList;
+
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View(games);
         }
 
         public ActionResult Contact()

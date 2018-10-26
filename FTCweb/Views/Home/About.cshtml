@@ -1,7 +1,30 @@
-﻿@{
+﻿
+@model List<FTCweb.Models.Game>
+
+@{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+
+<ul>
+    @foreach (var word in Model)
+    {
+        <li>@word.MyProperty1</li>
+        <li>@word.MyProperty2</li>
+        <li>@word.MyProperty3</li>
+        <li>@word.MyProperty4</li>
+        <li>@word.MyProperty5</li>
+        <li>@word.MyProperty6</li>
+        <li>@word.MyProperty7</li>
+    }
+</ul> 
+
+<script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    theResult();
+</script>
+<button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+<button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
