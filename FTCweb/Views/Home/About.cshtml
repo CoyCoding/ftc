@@ -8,23 +8,40 @@
 <h3>@ViewBag.Message</h3>
 
 
-<ul>
-    @foreach (var word in Model)
+<table id="Game-table" class="table table-bordered table-hover dt-responsive" style="width: 100%">
+    <thead>
+        <tr>
+            <th>@Model[0].MyProperty1</th>
+            <th>@Model[0].MyProperty2</th>
+            <th>@Model[0].MyProperty3</th>
+            <th>@Model[0].MyProperty4</th>
+            <th>@Model[0].MyProperty5</th>
+            <th>@Model[0].MyProperty6</th>
+            <th>@Model[0].MyProperty7</th>
+        </tr>
+    </thead>
+    @for (int rows = 1; rows < Model.Count; rows++)
     {
-        <li>@word.MyProperty1</li>
-        <li>@word.MyProperty2</li>
-        <li>@word.MyProperty3</li>
-        <li>@word.MyProperty4</li>
-        <li>@word.MyProperty5</li>
-        <li>@word.MyProperty6</li>
-        <li>@word.MyProperty7</li>
+     <tbody>
+         <tr>
+             <td>@Model[rows].MyProperty1</td>
+             <th>@Model[rows].MyProperty2</th>
+             <th>@Model[rows].MyProperty3</th>
+             <th>@Model[rows].MyProperty4</th>
+             <th>@Model[rows].MyProperty5</th>
+             <th>@Model[rows].MyProperty6</th>
+             <th>@Model[rows].MyProperty7</th>
+         </tr>
+     
+    </tbody>
+
     }
-</ul> 
+</table>
 
 <script async defer src="https://apis.google.com/js/api.js"
         onload="this.onload=function(){};handleClientLoad()"
         onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    theResult();
+theResult();
 </script>
 <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
 <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
