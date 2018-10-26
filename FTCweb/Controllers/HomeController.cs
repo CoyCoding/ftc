@@ -32,5 +32,12 @@ namespace FTCweb.Controllers
 
             return View();
         }
+
+        public ActionResult Main()
+        {
+            ViewBag.Message = "This is the Main Home Page";
+
+            return View();
+        }
     }
 }

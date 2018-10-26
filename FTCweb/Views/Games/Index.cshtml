@@ -1,0 +1,81 @@
+﻿
+@model List<FTCweb.Models.Game>
+
+@{
+    ViewBag.Title = "Games";
+}
+<h2>@ViewBag.Title.</h2>
+<h3></h3>
+
+
+<table id="game-table" class="table table-bordered table-hover dt-responsive bootstrap-table" style="width: 100%">
+    <thead style="width: 100%">
+        <tr>
+            <th>@Model[0].MyProperty1</th>
+            <th>@Model[0].MyProperty2</th>
+            <th>@Model[0].MyProperty3</th>
+            <th>@Model[0].MyProperty4</th>
+            <th>@Model[0].MyProperty6</th>
+            <th>@Model[0].MyProperty7</th>
+        </tr>
+    </thead>
+    @for (int rows = 1; rows < Model.Count; rows++)
+    {
+        <tbody>
+            @*<tr>
+                    <td>@Model[rows].MyProperty1</td>
+                    <th>@Model[rows].MyProperty2</th>
+                    <th>@Model[rows].MyProperty3</th>
+                    <th>@Model[rows].MyProperty4</th>
+                    <th>@Model[rows].MyProperty6</th>
+                    <th>@Model[rows].MyProperty7</th>
+                </tr>*@
+        </tbody>
+
+    }
+</table>
+
+@section scripts{
+
+    <script>
+        $(document).ready(function () {
+            var table = $("#game-table").DataTable({
+                ajax: {
+                    url: "/api/games",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "MyProperty1"
+                        //render: function (data, type, customer) {
+                        //    return "<a href='/customers/edit/" + customer.id + "'>" + data + "</a>";
+                        //}
+                    },
+                    {
+                        data: "MyProperty2"
+                    },
+                    {
+                        data: "MyProperty3"
+                    },
+                    {
+                        data: "MyProperty4"
+                    },
+                    {
+                        data: "MyProperty6"
+                    },
+                    {
+                        data: "myProperty7"
+                        //render: function (data, type, customer) {
+                        //    return "<div class='text-center'>" +
+                        //        "<button data-customer-name='" + customer.name +
+                        //        "'data-customer-id='" + data +
+                        //        "'class='btn btn-link jq-delete' type='button' >Delete</button>" + "</div>"
+                        //}
+                    }
+                ]
+            });
+    </script>
+}
+
+<button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+<button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
