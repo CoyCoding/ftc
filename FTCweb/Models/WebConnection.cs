@@ -36,7 +36,5 @@ namespace FTCweb.Models
             var testobject = Parser.ReadString(_file).ToList();
             GameList = testobject;
         }
-
-
     }
 }

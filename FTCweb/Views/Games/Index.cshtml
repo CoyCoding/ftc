@@ -6,11 +6,12 @@
 }
 <h2>@ViewBag.Title.</h2>
 <h3></h3>
-
+<img src="~/Content/img/SnesCover/3 Ninjas Kick Back (USA).png" />
         <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive bootstrap-table" style="width: 100%">
             <thead style="width: 100%">
                 <tr>
                     <th>Completed</th>
+                    <th>BoxArt</th>
                     <th>Title</th>
                     <th>Genre</th>
                     <th>Time</th>
@@ -40,6 +41,7 @@
                                 for (var i = 1; i < json.length; i++) {
                                     return_data.push({
                                         'finished': json[i].finished,
+                                        'boxArt': json[i].boxArt,
                                         'title': json[i].title,
                                         'genre': json[i].genre,
                                         'runtime': json[i].runtime,
@@ -58,6 +60,12 @@
                                     } else {
                                         return redX;
                                     }
+                                }
+                            },
+                            {
+                                data: "boxArt",
+                                render: function (data, type, game) {
+                                    return game.boxArt;
                                 }
                             },
                             { data: "title" },
