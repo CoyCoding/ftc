@@ -12,22 +12,15 @@
 <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive bootstrap-table" style="width: 100%">
     <thead style="width: 100%">
         <tr>
-            <th>@Model[0].MyProperty1</th>
-            <th>@Model[0].MyProperty2</th>
-            <th>@Model[0].MyProperty3</th>
-            <th>@Model[0].MyProperty4</th>
-            <th>@Model[0].MyProperty6</th>
-            <th>@Model[0].MyProperty7</th>
+            <th>Completed</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Time</th>
+            <th>Video</th>
         </tr>
     </thead>
         <tbody>
             <tr>
-                @*<td>@Model[rows].MyProperty1</td>
-                <th>@Model[rows].MyProperty2</th>
-                <th>@Model[rows].MyProperty3</th>
-                <th>@Model[rows].MyProperty4</th>
-                <th>@Model[rows].MyProperty6</th>
-                <th>@Model[rows].MyProperty7</th>*@
             </tr>
         </tbody>
 </table>
@@ -36,45 +29,54 @@
 @section scripts{
 
     <script>
-
-                                            //var table = $("#game-table").DataTable();
-                                            $("#game-table").DataTable({
-                                                order: [[1, 'asc']],
-                                                ajax: {
-                                                    type: "GET",
-                                                    url: "/api/games",
-                                                    dataSrc: ""
-                                                },
-                                                columns: [
-                                                    {
-                                                        data: "myProperty1"
-                                                        //render: function (data, type, customer) {
-                                                        //    return "<a href='/customers/edit/" + customer.id + "'>" + data + "</a>";
-                                                        //}
-                                                    },
-                                                    {
-                                                        data: "myProperty2"
-                                                    },
-                                                    {
-                                                        data: "myProperty3"
-                                                    },
-                                                    {
-                                                        data: "myProperty4"
-                                                    },
-                                                    {
-                                                        data: "myProperty6"
-                                                    },
-                                                    {
-                                                        data: "myProperty7"
-                                                        //render: function (data, type, customer) {
-                                                        //    return "<div class='text-center'>" +
-                                                        //        "<button data-customer-name='" + customer.name +
-                                                        //        "'data-customer-id='" + data +
-                                                        //        "'class='btn btn-link jq-delete' type='button' >delete</button>" + "</div>"
-                                                        //}
-                                                    }
-                                                ]
-                                            });
+        $(document).ready(function () {
+            $("#game-table").DataTable({
+                order: [[1, 'asc']],
+                ajax: {
+                    type: "GET",
+                    url: "/api/games",
+                    dataSrc: function (json) {
+                        var return_data = new Array();
+                        for (var i = 1; i < json.length; i++) {
+                            return_data.push({
+                                'myProperty1': json[i].myProperty1,
+                                'myProperty2': json[i].myProperty2,
+                                'myProperty3': json[i].myProperty3,
+                                'myProperty6': json[i].myProperty6,
+                                'myProperty7': json[i].myProperty7
+                            })
+                        }
+                        return return_data;
+                    }
+                },
+                columns: [
+                    {
+                        data: "myProperty1"
+                        //render: function (data, type, customer) {
+                        //    return "<a href='/customers/edit/" + customer.id + "'>" + data + "</a>";
+                        //}
+                    },
+                    {
+                        data: "myProperty2"
+                    },
+                    {
+                        data: "myProperty3"
+                    },
+                    {
+                        data: "myProperty6"
+                    },
+                    {
+                        data: "myProperty7"
+                        //render: function (data, type, customer) {
+                        //    return "<div class='text-center'>" +
+                        //        "<button data-customer-name='" + customer.name +
+                        //        "'data-customer-id='" + data +
+                        //        "'class='btn btn-link jq-delete' type='button' >delete</button>" + "</div>"
+                        //}
+                    }
+                ]
+            });
+        });
 
     </script>
 
