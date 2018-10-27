@@ -8,6 +8,10 @@
     font-size: 1vw;
 }
 
+.green-glow {
+    text-shadow: 0px 0px 1vw rgba(13,244,60,0), 0px 0px 1vw #0DF43C;
+}
+
 .green-shadow {
     text-shadow: #FFF 0px 0px 5vw, #0F0 0px 0px 10vw;
 }
