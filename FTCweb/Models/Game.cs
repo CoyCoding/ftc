@@ -10,21 +10,21 @@ namespace FTCweb.Models
     public class Game
     {
         [FieldOptional]
-        public string MyProperty1 { get; set; }
+        public string Finished{ get; set; }
         [FieldOptional]
         [FieldQuoted]
-        public string MyProperty2 { get; set; }
+        public string Title{ get; set; }
         [FieldOptional]
-        public string MyProperty3 { get; set; }
+        public string Genre{ get; set; }
         [FieldOptional]
-        public string MyProperty4 { get; set; }
+        public string Difficulty{ get; set; }
         [FieldOptional]
-        public string MyProperty5 { get; set; }
+        public string Thoughts{ get; set; }
         [FieldOptional]
-        public string MyProperty6 { get; set; }
+        public string Runtime{ get; set; }
         [FieldOptional]
         [FieldQuoted]
-        public string MyProperty7 { get; set; }
+        public string VideoLink{ get; set; }
  
     }
 }
