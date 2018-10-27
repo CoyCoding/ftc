@@ -11,12 +11,21 @@ namespace FTCweb
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/DataTables/jquery.dataTables.js",
-                        "~/Scripts/DataTables/dataTables.bootstrap.js"));
+                        "~/Scripts/DataTables/dataTables.bootstrap4.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+
             bundles.Add(new ScriptBundle("~/bundles/velocity").Include(
                         "~/Scripts/velocity.js"));
+
+
+            bundles.Add(new ScriptBundle("~/Scripts/datatables").Include(
+));
+
+            bundles.Add(new StyleBundle("~/Content/datatables").Include(
+                        //"~/Content/DataTables/css/dataTables.bootstrap4.css",
+                       ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -24,12 +33,12 @@ namespace FTCweb
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/DataTables/css/dataTables.bootstrap.css",
-                      "~/Content/DataTables/css/dataTables.bootstrap.min.css",
+                       "~/Content/DataTables/css/dataTables.bootstrap4.min.css",
                       "~/Content/site.css"));
         }
     }

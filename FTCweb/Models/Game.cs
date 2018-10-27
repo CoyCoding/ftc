@@ -23,6 +23,7 @@ namespace FTCweb.Models
         [FieldOptional]
         public string MyProperty6 { get; set; }
         [FieldOptional]
+        [FieldQuoted]
         public string MyProperty7 { get; set; }
  
     }
