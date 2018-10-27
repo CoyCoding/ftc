@@ -4,6 +4,38 @@
     background-color: #242428;
     color: whitesmoke;
 }
+.fa-vw {
+    font-size: 1.5vw;
+}
+
+.green-shadow {
+    text-shadow: #FFF 0px 0px 5vw, #0F0 0px 0px 10vw;
+}
+
+.fa-shadow {
+    color: transparent;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    background: radial-gradient(circle at 65% 15%, white 1px, white 3%, green 60%, green 70%,black 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-shadow-red {
+    color: transparent;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    background: radial-gradient(circle at 65% 15%, white 1px, darkred 50%, darkred 60%, darkred 70%, black 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.fa-shadow2 {
+    color: transparent;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    background: radial-gradient(circle at 65% 15%, white 1px, #bdbdbd 3%, black 60%, green 70%,black 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
