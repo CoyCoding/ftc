@@ -39,6 +39,7 @@
 
                                             //var table = $("#game-table").DataTable();
                                             $("#game-table").DataTable({
+                                                order: [[1, 'asc']],
                                                 ajax: {
                                                     type: "GET",
                                                     url: "/api/games",
