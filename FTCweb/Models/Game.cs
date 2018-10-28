@@ -11,7 +11,6 @@ namespace FTCweb.Models
     public class Game
     {
 
-
         [FieldOptional]
         [FieldOrder(1)]
         public string Finished{ get; set; }
