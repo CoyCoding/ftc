@@ -34,7 +34,7 @@ namespace FTCweb.Models
         {
             Parser = new FileHelperEngine<Game>();
             var testobject = Parser.ReadString(_file).ToList();
-            GameList = testobject;
+            GameList = testobject.GetRange(1, testobject.Count-1);
         }
     }
 }

@@ -12,8 +12,7 @@ namespace FTCweb.ViewModels
 
         public int TotalGames()
         {
-            //we subtract one because of the header from the csv file
-            return GameList.Count()-1;
+            return GameList.Count();
         }
 
         public int TotalGames(string genre)
@@ -29,6 +28,13 @@ namespace FTCweb.ViewModels
         public int CompletedGames(string selectedGenre)
         {
             return GameList.SelectedGenreList(selectedGenre).CompletedGamesCount();
+        }
+
+        public string GetRandomBoxArt()
+        {
+            var rnd = new Random();
+            int index = rnd.Next(1, TotalGames());
+            return GameList[index].BoxArt;
         }
     }
 }

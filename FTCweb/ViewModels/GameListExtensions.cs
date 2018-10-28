@@ -16,7 +16,7 @@ namespace FTCweb.ViewModels
         public static IEnumerable<Game> SelectedGenreList(this IEnumerable<Game> list, string genre)
         {
             return list.Where(g => g.Genre.Trim().ToUpper() == genre.Trim().ToUpper());
-            }
+            
         }
     }
 }

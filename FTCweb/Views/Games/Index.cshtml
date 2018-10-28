@@ -52,20 +52,7 @@
                 ajax: {
                     type: "GET",
                     url: "/api/games",
-                    dataSrc: function (json) {
-                        var return_data = new Array();
-                        for (var i = 1; i < json.length; i++) {
-                            return_data.push({
-                                'finished': json[i].finished,
-                                'boxArt': json[i].boxArt,
-                                'title': json[i].title,
-                                'genre': json[i].genre,
-                                'runtime': json[i].runtime,
-                                'videoLink': json[i].videoLink
-                            })
-                        }
-                        return return_data;
-                    }
+                    dataSrc: ""
                 },
                 columns: [
                     {
