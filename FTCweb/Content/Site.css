@@ -3,7 +3,7 @@
     padding-bottom: 20px;
     background-color: #000535;
     color: whitesmoke;
-    background-url: http://api.thumbr.it/whitenoise-361x370.png;
+    background-image: url(img/img-noise.png);
 }
 
 .y-body-shadow-hide{
@@ -15,7 +15,8 @@
 
 .body-shadow {
     background-color: #242428;
-    box-shadow:  0px 0px 1000px 10px black;
+    box-shadow: 0px 0px 20vw 16vw rgba(0, 0, 6, 0.87);
+
 }
 
 .fa-vw {
