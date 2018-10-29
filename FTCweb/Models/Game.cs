@@ -10,6 +10,7 @@ namespace FTCweb.Models
     [DelimitedRecord(",")]
     public class Game
     {
+       
 
         [FieldOptional]
         [FieldOrder(1)]

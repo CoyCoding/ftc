@@ -25,7 +25,7 @@ namespace FTCweb.Controllers
                 GameList = _sheet.GameList
             };
 
-            return View();
+            return View(gameList);
         }
     }
 }

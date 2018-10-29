@@ -1370,6 +1370,7 @@
     <Content Include="Content\img\SnesCover\Zombies Ate My Neighbors %28USA%29.png" />
     <Content Include="Content\img\SnesCover\Zool - Ninja of the %27Nth%27 Dimension %28USA%29.png" />
     <Content Include="Content\img\SnesCover\Zoop %28USA%29.png" />
+    <Content Include="Content\spash-screen.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

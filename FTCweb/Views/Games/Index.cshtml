@@ -1,22 +1,9 @@
 ﻿
-@model List<FTCweb.Models.Game>
+@model FTCweb.ViewModels.GameListViewModel
 
 @{
     ViewBag.Title = "The Snes Challenge";
-    @*@{
-            var totalGames = Model.Count - 1;
-            var completeGames = Model.Count(g => !g.Finished.IsEmpty());
-            var rnd = new Random();
-            int index = rnd.Next(1, Model.Count + 1);
-            int index2 = rnd.Next(1, Model.Count + 1);
-            int index3 = rnd.Next(1, Model.Count + 1);
-        }
-        <h2>@ViewBag.Title.</h2>
-        <div style="display: inline-block; height: 2vw">
-            @Html.Raw(Model[index].BoxArt);
-            @Html.Raw(Model[index2].BoxArt);
-            @Html.Raw(Model[index3].BoxArt);
-        </div>*@
+
 }
 <div class="body-shadow">
     <h2 class="game-list-header">@ViewBag.Title</h2>
@@ -32,9 +19,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr style="width:20%"></tr>
-        </tbody>
-    </table>
+            @*@for (int rows = 1; rows < Model.GameList.Count; rows++)
+            {
+                <tr>
+                    <td>@Model.GameList[rows].Finished</td>
+                    <th>@Html.Raw(Model.GameList[rows].BoxArt)</th>
+                    <th>@Model.GameList[rows].Title</th>
+                    <th>@Model.GameList[rows].Genre</th>
+                    <th>@Model.GameList[rows].Runtime</th>
+                    <th>@Model.GameList[rows].VideoLink</th>
+                </tr>
+                }*@
+                @*<tr style="width:20%"></tr>*@
+            </tbody>
+        </table>
 </div>
 
 
@@ -44,12 +42,12 @@
         var greenCheck = "<div style='text-align: center'><span class='fa-vw fa-stack'><i style='color: green' class='fa fa-circle fa-stack-2x fa-shadow2' ></i><i style='color: white' class='fa-shadow fa fa-check-circle fa-stack-2x'></i></span ></div>";
         var redX = "<div style='text-align: center'><span class='fa-vw fa-stack'><i style='color: red' class='fa fa-circle fa-stack-2x fa-shadow2' ></i><i style='color: white' class='fa-shadow-red fa fa-times-circle fa-stack-2x fa-shadow-red'></i></span ></div>";
 
-        
         //this javascript is for lodaing the table data from the api
         $(document).ready(function () {
            var table =  $("#game-table").DataTable({
-                //responsive: true,
-                paging: false,
+               responsive: true,
+               paging: false,
+               pageLength: 100,
                 order: [[2, 'asc']],
                 ajax: {
                     type: "GET",
