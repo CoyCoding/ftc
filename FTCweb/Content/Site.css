@@ -1,9 +1,23 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #242428;
+    background-color: #000535;
     color: whitesmoke;
+    background-url: http://api.thumbr.it/whitenoise-361x370.png;
 }
+
+.y-body-shadow-hide{
+  /*overflow-y: hidden;*/
+}
+
+
+
+
+.body-shadow {
+    background-color: #242428;
+    box-shadow:  0px 0px 1000px 10px black;
+}
+
 .fa-vw {
     font-size: 1vw;
 }
@@ -14,6 +28,11 @@
 
 .grid-image{
     height: 12vw;
+    max-height: 150px;
+}
+
+#game-table tr{
+    font-size: 1vw;
 }
 
 .green-shadow {
@@ -45,9 +64,20 @@
     -webkit-text-fill-color: transparent;
 }
 
+#game-table td{
+    vertical-align: middle;
+}
+
+#game-table tr td:nth-child(2){
+    padding: 0;
+}
+
+
+
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding: 15px;
+    padding: 5px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

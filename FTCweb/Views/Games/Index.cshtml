@@ -17,29 +17,28 @@
         @Html.Raw(Model[index2].BoxArt);
         @Html.Raw(Model[index3].BoxArt);
     </div>*@
-
 }
-<h2>@ViewBag.Title.</h2>
+<div class="y-body-shadow-hide">
+    <div class="body-shadow">
+        <h2>@ViewBag.Title</h2>
 
-@FTCweb.Models.GenreEnum.Genre.Shooter_3D
-<img src="~/Content/img/SnesCover/3 Ninjas Kick Back (USA).png" />
-<table id="game-table" class="table-dark table table-bordered table-hover dt-responsive bootstrap-table" style="width: 100%">
-    <thead style="width: 100%">
-        <tr>
-            <th>Completed</th>
-            <th data-sortable="false" >BoxArt</th>
-            <th>Title</th>
-            <th>Genre</th>
-            <th>Time</th>
-            <th data-sortable="false">Video</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr></tr>
-    </tbody>
-</table>
-
-
+        <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive table-responsive-md bootstrap-table" style="width: 100%">
+            <thead style="width: 100%">
+                <tr>
+                    <th>Completed</th>
+                    <th data-sortable="false">BoxArt</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Time</th>
+                    <th data-sortable="false">Video</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 @section scripts{
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <script>
@@ -48,6 +47,7 @@
 
         $(document).ready(function () {
             $("#game-table").DataTable({
+                responsive: true,
                 order: [[2, 'asc']],
                 ajax: {
                     type: "GET",
