@@ -18,7 +18,6 @@ namespace FTCweb.Controllers
         {
             var csv = new WebConnection();
 
-            //csv.GetString();
             var games = csv.GameList;
 
             ViewBag.Message = "Your application description page.";

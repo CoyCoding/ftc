@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using FTCweb.Models;
+using FTCweb.ViewModels;
 
 namespace FTCweb.Controllers.Api
 {
@@ -20,9 +21,12 @@ namespace FTCweb.Controllers.Api
         //GET api/Games
         public IHttpActionResult GetGames(string query = null)
         {
-            var games = _sheet.GameList;
+            var gameList = new GameListViewModel
+            {
+                GameList = _sheet.GameList
+            };
 
-            return Ok(games);
+            return Ok(gameList);
         }
     }
 }

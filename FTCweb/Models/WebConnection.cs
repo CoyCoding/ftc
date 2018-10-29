@@ -5,13 +5,13 @@ using System.Web;
 using System.Net;
 using FileHelpers;
 
+
 namespace FTCweb.Models
 {
     public class WebConnection
     {
         private FileHelperEngine<Game> Parser;
         private string _file;
-
         public List<Game> GameList { get; set; }
 
 
