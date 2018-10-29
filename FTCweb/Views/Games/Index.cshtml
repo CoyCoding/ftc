@@ -27,11 +27,11 @@
     <thead style="width: 100%">
         <tr>
             <th>Completed</th>
-            <th>BoxArt</th>
+            <th data-sortable="false" >BoxArt</th>
             <th>Title</th>
             <th>Genre</th>
             <th>Time</th>
-            <th>Video</th>
+            <th data-sortable="false">Video</th>
         </tr>
     </thead>
     <tbody>
@@ -48,7 +48,7 @@
 
         $(document).ready(function () {
             $("#game-table").DataTable({
-                order: [[1, 'asc']],
+                order: [[2, 'asc']],
                 ajax: {
                     type: "GET",
                     url: "/api/games",
@@ -56,6 +56,7 @@
                 },
                 columns: [
                     {
+                        type: "title-string",
                         data: "finished",
                         render: function (data, type, game) {
                             if (game.finished === '1') {
@@ -68,7 +69,7 @@
                     {
                         data: "boxArt",
                         render: function (data, type, game) {
-                            return game.boxArt
+                            return game.boxArt;
                         }
                     },
                     { data: "title" },

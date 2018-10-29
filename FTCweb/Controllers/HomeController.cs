@@ -16,13 +16,10 @@ namespace FTCweb.Controllers
 
         public ActionResult About()
         {
-            var csv = new WebConnection();
-
-            var games = csv.GameList;
 
             ViewBag.Message = "Your application description page.";
 
-            return View(games);
+            return View();
         }
 
         public ActionResult Contact()

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FTCweb.Models;
+using FTCweb.ViewModels;
 
 namespace FTCweb.Controllers
 {
@@ -19,9 +20,12 @@ namespace FTCweb.Controllers
         // GET: Games
         public ActionResult Index()
         {
-                var games = _sheet.GameList;
+            var gameList = new GameListViewModel
+            {
+                GameList = _sheet.GameList
+            };
 
-            return View(games);
+            return View();
         }
     }
 }
