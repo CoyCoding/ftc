@@ -10,14 +10,10 @@
   /*overflow-y: hidden;*/
 }
 
-
-
-
-.body-shadow {
-    background-color: #242428;
+#game-table {
     box-shadow: 0px 0px 20vw 16vw rgba(0, 0, 6, 0.87);
-
 }
+
 
 .fa-vw {
     font-size: 1vw;
@@ -73,8 +69,15 @@
     padding: 0;
 }
 
+#game-table_wrapper div label:nth-child(1) {
+    position: relative;
+    z-index: 1;
+}
 
-
+.game-list-header {
+    position: relative;
+    z-index: 1;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
