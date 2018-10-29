@@ -61,6 +61,36 @@
     -webkit-text-fill-color: transparent;
 }
 
+.alphabet {
+    display: table;
+    width: 100%;
+    margin-bottom: 1em;
+    text-align: center;
+    z-index: 1;
+    font-size: 2.5vw;
+}
+ 
+.alphabet span {
+    display: table-cell;
+    cursor: pointer;
+    text-align: center;
+    width: 3.5%;
+    color: darkred;
+    font-weight: 700;
+}
+ 
+.alphabet span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: red;
+    
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: normalr;
+}
+
 #game-table td{
     vertical-align: middle;
 }
@@ -77,6 +107,9 @@
 .game-list-header {
     position: relative;
     z-index: 1;
+    text-align: center;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 }
 
 /* Set padding to keep content from hitting the edges */

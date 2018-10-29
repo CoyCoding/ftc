@@ -2,52 +2,55 @@
 @model List<FTCweb.Models.Game>
 
 @{
-    ViewBag.Title = "Games";
+    ViewBag.Title = "The Snes Challenge";
     @*@{
-        var totalGames = Model.Count - 1;
-        var completeGames = Model.Count(g => !g.Finished.IsEmpty());
-        var rnd = new Random();
-        int index = rnd.Next(1, Model.Count + 1);
-        int index2 = rnd.Next(1, Model.Count + 1);
-        int index3 = rnd.Next(1, Model.Count + 1);
-    }
-    <h2>@ViewBag.Title.</h2>
-    <div style="display: inline-block; height: 2vw">
-        @Html.Raw(Model[index].BoxArt);
-        @Html.Raw(Model[index2].BoxArt);
-        @Html.Raw(Model[index3].BoxArt);
-    </div>*@
+            var totalGames = Model.Count - 1;
+            var completeGames = Model.Count(g => !g.Finished.IsEmpty());
+            var rnd = new Random();
+            int index = rnd.Next(1, Model.Count + 1);
+            int index2 = rnd.Next(1, Model.Count + 1);
+            int index3 = rnd.Next(1, Model.Count + 1);
+        }
+        <h2>@ViewBag.Title.</h2>
+        <div style="display: inline-block; height: 2vw">
+            @Html.Raw(Model[index].BoxArt);
+            @Html.Raw(Model[index2].BoxArt);
+            @Html.Raw(Model[index3].BoxArt);
+        </div>*@
 }
-    <div class="body-shadow">
-        <h2 class="game-list-header">@ViewBag.Title</h2>
+<div class="body-shadow">
+    <h2 class="game-list-header">@ViewBag.Title</h2>
 
-        <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive table-responsive-md bootstrap-table" style="width: 100%">
-            <thead style="width: 100%">
-                <tr>
-                    <th>Completed</th>
-                    <th data-sortable="false">BoxArt</th>
-                    <th>Title</th>
-                    <th>Genre</th>
-                    <th>Time</th>
-                    <th data-sortable="false">Video</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr></tr>
-            </tbody>
-        </table>
-    </div>
+    <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive table-responsive-md bootstrap-table" style="width: 100%">
+        <thead style="width: 100%">
+            <tr>
+                <th>Completed</th>
+                <th data-sortable="false">BoxArt</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Time</th>
+                <th data-sortable="false">Video</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
+</div>
 @section scripts{
+    <link type="text/css" href="//gyrocode.github.io/jquery-datatables-alphabetSearch/1.2.5/css/dataTables.alphabetSearch.css" rel="stylesheet" />
+    <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-alphabetSearch/1.2.5/js/dataTables.alphabetSearch.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <script>
         var greenCheck = "<div style='text-align: center'><span class='fa-vw fa-stack'><i style='color: green' class='fa fa-circle fa-stack-2x fa-shadow2' ></i><i style='color: white' class='fa-shadow fa fa-check-circle fa-stack-2x'></i></span ></div>";
         var redX = "<div style='text-align: center'><span class='fa-vw fa-stack'><i style='color: red' class='fa fa-circle fa-stack-2x fa-shadow2' ></i><i style='color: white' class='fa-shadow-red fa fa-times-circle fa-stack-2x fa-shadow-red'></i></span ></div>";
 
-        $(document).ready(function () {
-           
 
-            $("#game-table").DataTable({
-                responsive: true,
+
+        $(document).ready(function () {
+           var table =  $("#game-table").DataTable({
+                //responsive: true,
+                paging: false,
                 order: [[2, 'asc']],
                 ajax: {
                     type: "GET",
@@ -86,7 +89,48 @@
                     }
                 ]
             });
+
+                     $.fn.dataTable.ext.search.push(function (settings, searchData) {
+                if (!_alphabetSearch) { // No search term - all results shown
+                    return true;
+                }
+
+                if (searchData[2].charAt(0) === _alphabetSearch) {
+                    return true;
+                }
+
+                return false;
+            });  
+            var _alphabetSearch;
+
+            var alphabet = $('<div class="alphabet"/>').append('Search: ');
+
+            $('<span class="clear active"/>')
+                .data('letter', '')
+                .html('None')
+                .appendTo(alphabet);
+
+            for (var i = 0; i < 26; i++) {
+                var letter = String.fromCharCode(65 + i);
+
+                $('<span/>')
+                    .data('letter', letter)
+                    .html(letter)
+                    .appendTo(alphabet);
+            }
+
+            alphabet.insertBefore(table.table().container());
+
+            alphabet.on('click', 'span', function () {
+                alphabet.find('.active').removeClass('active');
+                $(this).addClass('active');
+
+                _alphabetSearch = $(this).data('letter');
+                table.draw();
+            });
         });
+
+
 
     </script>
 
