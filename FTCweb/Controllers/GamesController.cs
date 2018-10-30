@@ -8,6 +8,7 @@ using FTCweb.ViewModels;
 
 namespace FTCweb.Controllers
 {
+    [RoutePrefix("Games")]
     public class GamesController : Controller
     {
         private WebConnection _sheet;
@@ -18,7 +19,8 @@ namespace FTCweb.Controllers
         }
 
         // GET: Games
-        public ActionResult Index()
+        [Route("SnesChallenge")]
+        public ActionResult SnesChallenge()
         {
             var gameList = new GameListViewModel
             {

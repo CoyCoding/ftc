@@ -1,0 +1,138 @@
+﻿
+@model FTCweb.ViewModels.GameListViewModel
+
+@{
+    ViewBag.Title = "The Snes Challenge";
+
+}
+<div class="data-table-body">
+    <div class="body-shadow">
+        <h2 class="game-list-header">@ViewBag.Title</h2>
+        <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive table-responsive-md bootstrap-table" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Completed</th>
+                    <th data-sortable="false">BoxArt</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Time</th>
+                    <th data-sortable="false">Video</th>
+                </tr>
+            </thead>
+            <tbody>
+                @*@for (int rows = 1; rows < Model.GameList.Count; rows++)
+                    {
+                        <tr>
+                            <td>@Model.GameList[rows].Finished</td>
+                            <th>@Html.Raw(Model.GameList[rows].BoxArt)</th>
+                            <th>@Model.GameList[rows].Title</th>
+                            <th>@Model.GameList[rows].Genre</th>
+                            <th>@Model.GameList[rows].Runtime</th>
+                            <th>@Model.GameList[rows].VideoLink</th>
+                        </tr>
+                        }*@
+                @*<tr style="width:20%"></tr>*@
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+        var greenCheck = "<div style='text-align: center'><span class='fa-vw fa-stack'><i style='color: green' class='fa fa-circle fa-stack-2x fa-shadow2' ></i><i style='color: white' class='fa-shadow fa fa-check-circle fa-stack-2x'></i></span ></div>";
+        var redX = "<div style='text-align: center'><span class='fa-vw fa-stack'><i style='color: red' class='fa fa-circle fa-stack-2x fa-shadow2' ></i><i style='color: white' class='fa-shadow-red fa fa-times-circle fa-stack-2x fa-shadow-red'></i></span ></div>";
+
+        //this javascript is for lodaing the table data from the api
+        $(document).ready(function () {
+           var table =  $("#game-table").DataTable({
+               responsive: true,
+               paging: false,
+               pageLength: 100,
+                order: [[2, 'asc']],
+                ajax: {
+                    type: "GET",
+                    url: "/api/games",
+                    dataSrc: "gameList"
+                },
+                columns: [
+                    {
+                        type: "title-string",
+                        data: "finished",
+                        render: function (data, type, game) {
+                            if (game.finished === '1') {
+                                return greenCheck;
+                            } else {
+                                return redX;
+                            }
+                        }
+                    },
+                    {
+                        data: "boxArt",
+                        render: function (data, type, game) {
+                            return game.boxArt;
+                        }
+                    },
+                    { data: "title" },
+                    { data: "genre" },
+                    { data: "runtime" },
+                    {
+                        data: "videoLink"
+                        //render: function (data, type, customer) {
+                        //    return "<div class='text-center'>" +
+                        //        "<button data-customer-name='" + customer.name +
+                        //        "'data-customer-id='" + data +
+                        //        "'class='btn btn-link jq-delete' type='button' >delete</button>" + "</div>"
+                        //}
+                    }
+                ]
+            });
+
+
+            //This javascript is for paging by alpahbet
+            $.fn.dataTable.ext.search.push(function (settings, searchData) {
+                if (!_alphabetSearch) { // No search term - all results shown
+                    return true;
+                }
+
+                if (searchData[2].charAt(0) === _alphabetSearch) {
+                    return true;
+                }
+
+                return false;
+            });  
+            var _alphabetSearch;
+
+            var alphabet = $('<div class="alphabet"/>').append('Search: ');
+
+            $('<span class="clear active"/>')
+                .data('letter', '')
+                .html('None')
+                .appendTo(alphabet);
+
+            for (var i = 0; i < 26; i++) {
+                var letter = String.fromCharCode(65 + i);
+
+                $('<span/>')
+                    .data('letter', letter)
+                    .html(letter)
+                    .appendTo(alphabet);
+            }
+
+            alphabet.insertBefore(table.table().container());
+
+            alphabet.on('click', 'span', function () {
+                alphabet.find('.active').removeClass('active');
+                $(this).addClass('active');
+
+                _alphabetSearch = $(this).data('letter');
+                table.draw();
+            });
+        });
+
+
+
+    </script>
+
+}
+

@@ -1494,10 +1494,24 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="slick\ajax-loader.gif" />
+    <Content Include="slick\fonts\slick.svg" />
+    <Content Include="slick\slick-theme.css" />
+    <Content Include="slick\slick.css" />
+    <Content Include="slick\slick.js" />
+    <Content Include="slick\slick.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="slick\config.rb" />
+    <Content Include="slick\fonts\slick.eot" />
+    <Content Include="slick\fonts\slick.ttf" />
+    <Content Include="slick\fonts\slick.woff" />
+    <Content Include="slick\slick-theme.less" />
+    <Content Include="slick\slick-theme.scss" />
+    <Content Include="slick\slick.less" />
+    <Content Include="slick\slick.scss" />
     <None Include="Scripts\_references.js" />
     <Content Include="Scripts\velocity.js" />
     <Content Include="Scripts\_vs2012.intellisense.Test.js" />
@@ -1545,8 +1559,10 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_NavbarPartial.cshtml" />
-    <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\Games\SnesChallenge.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Games\Index.cshtml" />
+    <Content Include="Views\Shared\_HomePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
