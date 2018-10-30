@@ -6,6 +6,9 @@
     background-image: url(img/img-noise.png);
 }
 
+.custom-nav {
+    background-color: rgb(3, 0, 14);
+}
 #game-table {
     box-shadow: 0px 0px 20vw 16vw rgba(0, 0, 6, 0.87);
 }

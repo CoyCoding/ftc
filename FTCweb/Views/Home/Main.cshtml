@@ -3,7 +3,65 @@
     ViewBag.Title = "Main";
     Layout = "~/Views/Shared/_HomePage.cshtml";
 }
+<style>
+   .title{
+       text-align: center;
+       margin-top: 3vw;
+   }
+</style>
+
+<div class="title"><h1>FTC.Gaming</h1></div>
+
+<div style=" margin: 0px 2vw 2vw 2vw; box-shadow: 0px -20px 20vw 16vw rgb(0, 0, 6)">
+    <div class="slider" style="background-color: black; max-height: 233px;  padding-top: 3vw">
+        <div style=""><img src="~/Content/img/SnesCover/3 Ninjas Kick Back (USA).png" /></div>
+        <div><img src="~/Content/img/SnesCover/3 Ninjas Kick Back (USA).png" /></div>
+
+        <div><img src="~/Content/img/SnesCover/Run Saber (USA).png" /></div>
+        <div><img src="~/Content/img/SnesCover/Run Saber (USA).png" /></div>
+        <div><img src="~/Content/img/SnesCover/Run Saber (USA).png" /></div>
+    </div>
+</div>
+<div class="container body-content">
+   
 
 
-<h2>test</h2>
+
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.slider').slick({
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            centerMode: true,
+
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
 
