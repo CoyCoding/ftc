@@ -394,6 +394,7 @@
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\img\img-noise.png" />
+    <Content Include="Content\img\Controller.jpg" />
     <Content Include="Content\img\SnesCover\2020 Super Baseball %28USA%29.png" />
     <Content Include="Content\img\SnesCover\7th Saga, The %28USA%29.png" />
     <Content Include="Content\img\SnesCover\90 Minutes - European Prime Goal %28Europe%29.png" />
