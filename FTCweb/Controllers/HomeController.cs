@@ -4,11 +4,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FTCweb.Models;
+using FTCweb.ViewModels;
 
 namespace FTCweb.Controllers
 {
     public class HomeController : Controller
     {
+        private WebConnection _sheet;
+
+        public HomeController()
+        {
+            _sheet = new WebConnection();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -16,7 +24,6 @@ namespace FTCweb.Controllers
 
         public ActionResult About()
         {
-
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -24,16 +31,17 @@ namespace FTCweb.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
         public ActionResult Main()
         {
-            ViewBag.Message = "This is the Main Home Page";
+            var gameList = new GameListViewModel
+            {
+                GameList = _sheet.GameList
+            };
 
-            return View();
+            return View(gameList);
         }
     }
 }

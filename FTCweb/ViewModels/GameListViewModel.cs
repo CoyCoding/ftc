@@ -8,6 +8,13 @@ namespace FTCweb.ViewModels
 {
     public class GameListViewModel
     {
+        private static Random rnd;
+
+        static GameListViewModel()
+        {
+            rnd = new Random();
+        }
+
         public List<Game> GameList { get; set; }
 
         public int TotalGames()
@@ -32,7 +39,6 @@ namespace FTCweb.ViewModels
 
         public string GetRandomBoxArt()
         {
-            var rnd = new Random();
             int index = rnd.Next(1, TotalGames());
             return GameList[index].BoxArt;
         }
