@@ -37,10 +37,10 @@ namespace FTCweb.ViewModels
             return GameList.SelectedGenreList(selectedGenre).CompletedGamesCount();
         }
 
-        public string GetRandomBoxArt()
+        public Game GetRandomGame()
         {
-            int index = rnd.Next(1, TotalGames());
-            return GameList[index].BoxArt;
+            int index = rnd.Next(0, TotalGames());
+            return GameList[index];
         }
     }
 }

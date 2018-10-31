@@ -48,7 +48,7 @@ namespace FTCweb.Models
             get
             {
                 var imgTitle = Regex.Replace(Title, ":|&", "");
-                return "<img class='grid-image' src=\"/Content/img/SnesCover/" + imgTitle +" (USA).png\"/>";
+                return "/Content/img/SnesCover/" + imgTitle +" (USA).png";
             }
         }
     }
