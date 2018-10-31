@@ -12,13 +12,23 @@
 </head>
 <body>
     @Html.Partial("_NavbarPartial")
-    <div id="body-render" class="container body-content">
-    @RenderBody()
-        </div>
+    <div id="body-render" class="">
+
+        @RenderBody()
+
+
+    </div>
+    <div class="">
+        <footer id="footer" class="container-fluid bg-dark text-center">
+            <div>Copyright - @DateTime.Now</div>
+        </footer>
+    </div>
+ 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-</body>
 
+</body>
+ 
 
 
 </html>
