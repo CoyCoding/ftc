@@ -4,101 +4,90 @@
     Layout = "~/Views/Shared/_HomePage.cshtml";
 }
 <style>
-   .title{
-       text-align: center;
-   }
+    .btn-center {
+        position: center;
+    }
 </style>
-<style>
-    .boxart-offset {
-        padding-left: 15vw;
-    }
-    .half-hero-bar {
-        height: 100%;
-        background-image: linear-gradient(#00000075,#000000), url(../../Content/img/Controller.jpg);
-        background-position: center;
-        background-size: cover;
-    }
-    .slider {
-        max-height: 233px;
-        padding-top: 3vw
-    }
-    .wrap-hero {
-        height: 50%;
-        margin: 0;
-        box-sizing: unset;
-        padding: 0px;
-    }
 
-        .slider-wrap {
-        margin: 0px 2vw 2vw 2vw;
-        box-shadow: 0px -20px 20vw 16vw rgb(0, 0, 6);
-        background-color: black;
-    }
-</style>
-<div class="wrap-hero">
-    <div class="title half-hero-bar">
-    <h1>FTC.Gaming</h1>
+
+<section>
+        <div class="jumbotron">
+            <div class="display-4">Main Page Test</div>
+            <p class="text-muted">Just testing out bootstrap 4 with this page</p>
+            <div class="row justify-content-around">
+                <a href="#" class="btn btn-primary col-5 col-md-3">Button 1</a>
+                <a href="#" class="btn btn-secondary col-5 col-md-3">Button 2</a>
+            </div>
         </div>
-</div>
+</section>
+<section>
+    <div class="container">
 
-<div></div>
-<div class="slider-wrap">
-    <div class="slider">
-
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
-            <div>@Html.Raw(Model.GetRandomBoxArt())<div class="boxart-offset">@Html.Raw(Model.GetRandomBoxArt())</div></div>
+        <div class="row">
 
 
 
+            <div class="col-8">
+                <h1>Welcome Message</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat tincidunt ex nec rutrum. Integer lobortis nibh diam, eget dapibus lorem gravida ac. Class aptent taciti sociosqu ad litora torquent.</p>
+                <p>Vestibulum pharetra lorem sit amet mauris vulputate rutrum. Phasellus vitae sapien a erat luctus condimentum at in nisi. Nam aliquet ornare auctor. Mauris.</p>
+                <p>Class aptent taciti sociosqu ad litora torquent. Phasellus vitae sapien consectetur adipiscing elit.</p>
+            </div>
 
+
+
+
+            <div class="col-4">
+                <p>
+                    Random Snes Cover
+                    <img style="width: 100%" src="~/Content/img/SnesCover/2020 Super Baseball (USA).png" />
+                </p><p>
+                    Random Snes Cover
+                    <img style="width: 100%" src="~/Content/img/SnesCover/Darius Twin (USA).png" />
+                </p>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img src="~/Content/img/hero-background.gif" class="card-img-top" />
+                        <div class="card-body">
+                            <h6 class="card-title">Space</h6>
+                            <p class="card-text">The intro background</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img src="~/Content/img/hero-background.gif" class="card-img-top" />
+                        <div class="card-body">
+                            <h6 class="card-title">Space</h6>
+                            <p class="card-text">The intro background</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-4">
+                    <div class="card">
+                        <img src="~/Content/img/hero-background.gif" class="card-img-top" />
+                        <div class="card-body">
+                            <h6 class="card-title">Space</h6>
+                            <p class="card-text">The intro background</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
-</div>
-<div class="container body-content">
-   
-
-
-
-</div>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.slider').slick({
-            infinite: true,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            centerMode: true,
-
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }
-            ]
-        });
-    });
-</script>
+</section>
 
 

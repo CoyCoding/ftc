@@ -1,10 +1,15 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    background-color: #000535;
-    color: whitesmoke;
-    background-image: url(img/img-noise.png);
-}
+﻿
+
+
+
+
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+        background-color: #000535;
+        color: whitesmoke;
+        background-image: url(img/img-noise.png);
+    }
 
 .custom-nav {
     background-color: rgb(3, 0, 14);
