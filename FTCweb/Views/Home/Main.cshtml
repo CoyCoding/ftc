@@ -8,6 +8,18 @@
         position: center;
     }
 
+    .jumbotron {
+        background-image: linear-gradient(#03000e,#000000bf, #212529, #000000 50%), url(/Content/img/snes-banner.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top 50 left;
+        background-attachment: fixed;
+        background-position-x: top;
+        overflow: auto;
+        height: 50%;
+        margin-bottom: 0;
+    }
+
     .card-left-offset {
         margin-left: 0px;
     }
@@ -21,11 +33,25 @@
     }
 
     .card-background {
-        background: linear-gradient(black, grey, #754d4d, black);
+        background: linear-gradient( #000000, #000000, #21252985);
+        border-bottom-right-radius: 30%;
     }
 
     .card-bottom-padding{
         padding-bottom: 10%;
+    }
+
+    .container-bg-dark {
+        padding-top: 1%;
+        background: url(img/img-noise.png), linear-gradient(#000000, #000000fa, #00000073, #000000);
+        background-attachment: fixed;
+    }
+
+    .container-bg-img {
+        padding-top: 1%;
+        background: url(img/img-noise.png), linear-gradient(#00000000, #000000, #00000073, black);
+        background-attachment: fixed;
+        background-size: cover;
     }
 
 </style>
@@ -46,34 +72,39 @@
 
 </section>
 <section>
-    <div class="container">
+    <div class="container-fluid container-bg-dark">
+        <div class="container">
 
-        <div class="row">
+            <div class="row">
 
 
 
-            <div class="col-8">
-                <h1>Welcome Message</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat tincidunt ex nec rutrum. Integer lobortis nibh diam, eget dapibus lorem gravida ac. Class aptent taciti sociosqu ad litora torquent.</p>
-                <p>Vestibulum pharetra lorem sit amet mauris vulputate rutrum. Phasellus vitae sapien a erat luctus condimentum at in nisi. Nam aliquet ornare auctor. Mauris.</p>
-                <p>Class aptent taciti sociosqu ad litora torquent. Phasellus vitae sapien consectetur adipiscing elit.</p>
+                <div class="col-8">
+                    <h1>Welcome Message</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat tincidunt ex nec rutrum. Integer lobortis nibh diam, eget dapibus lorem gravida ac. Class aptent taciti sociosqu ad litora torquent.</p>
+                    <p>Vestibulum pharetra lorem sit amet mauris vulputate rutrum. Phasellus vitae sapien a erat luctus condimentum at in nisi. Nam aliquet ornare auctor. Mauris.</p>
+                    <p>Class aptent taciti sociosqu ad litora torquent. Phasellus vitae sapien consectetur adipiscing elit.</p>
+                </div>
+
+
+
+
+                <div class="col-4 ">
+                    <p>
+                        Random Snes Cover
+                        <img style="width: 100%" src="~/Content/img/SnesCover/2020 Super Baseball (USA).png" />
+                    </p>
+                    <p>
+                        Random Snes Cover
+                        <img style="width: 100%" src="~/Content/img/SnesCover/Darius Twin (USA).png" />
+                    </p>
+                </div>
+
             </div>
-
-
-
-
-            <div class="col-4 ">
-                <p>
-                    Random Snes Cover
-                    <img style="width: 100%" src="~/Content/img/SnesCover/2020 Super Baseball (USA).png" />
-                </p><p>
-                    Random Snes Cover
-                    <img style="width: 100%" src="~/Content/img/SnesCover/Darius Twin (USA).png" />
-                </p>
-            </div>
-
         </div>
-
+    </div>
+    <div class="container-fluid container-bg-img">
+        <div class="container">
             <div class="row card-bottom-padding">
                 <div class="col-sm-4">
                     <div class="card card-background">
@@ -95,10 +126,10 @@
                             <p class="card-text">This game blows chunks</p>
                         </div>
                     </div>
-                </div>  
-                
-                
-                
+                </div>
+
+
+
                 <div class="col-sm-4">
                     <div class="card card-background">
                         <img src="~/Content/img/SnesCover/ACME Animation Factory (USA).png" class="card-img-top" />
@@ -112,6 +143,9 @@
 
             </div>
         </div>
+    </div>
+
+
 </section>
 
 <section>
