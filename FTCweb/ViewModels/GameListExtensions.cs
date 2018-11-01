@@ -18,6 +18,5 @@ namespace FTCweb.ViewModels
             return list.Where(g => g.Genre.Trim().ToUpper() == genre.Trim().ToUpper());
             
         }
-
     }
 }

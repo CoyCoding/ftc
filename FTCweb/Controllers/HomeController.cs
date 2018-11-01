@@ -39,6 +39,7 @@ namespace FTCweb.Controllers
             var gameList = new GameListViewModel
             {
                 GameList = _sheet.GameList
+                
             };
 
             return View(gameList);
