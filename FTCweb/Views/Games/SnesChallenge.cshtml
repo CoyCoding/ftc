@@ -8,7 +8,7 @@
 <div class="data-table-body">
     <div class="body-shadow">
         <h2 class="game-list-header">@ViewBag.Title</h2>
-        <table id="game-table" class="table-dark table table-bordered table-hover dt-responsive table-responsive-md bootstrap-table" style="width: 100%">
+        <table id="game-table" class="table-dark table table-hover dt-responsive table-responsive-md bootstrap-table" style="width: 100%">
             <thead>
                 <tr>
                     <th>Completed</th>
@@ -60,7 +60,7 @@
                         type: "title-string",
                         data: "finished",
                         render: function (data, type, game) {
-                            if (game.finished === '1') {
+                            if (game.finished) {
                                 return greenCheck;
                             } else {
                                 return redX;
@@ -77,13 +77,13 @@
                     { data: "genre" },
                     { data: "runtime" },
                     {
-                        data: "videoLink"
-                        //render: function (data, type, customer) {
-                        //    return "<div class='text-center'>" +
-                        //        "<button data-customer-name='" + customer.name +
-                        //        "'data-customer-id='" + data +
-                        //        "'class='btn btn-link jq-delete' type='button' >delete</button>" + "</div>"
-                        //}
+                        data: "videoLink",
+                        render: function (data, type, game) {
+                            if (game.finished) {
+                                return "<div><a href=" + game.videoLink + "><i class=\"fas fa-play-circle fa-2x\"></i></a></div>";
+                            }
+                            return "";
+                        }
                     }
                 ]
             });
